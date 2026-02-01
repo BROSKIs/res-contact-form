@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="form-contact" action="#" type="get">
+    <form id="form-contact" action="#">
         <h1>Contact Form</h1>
         <fieldset>
             <!-- Name -->
@@ -45,15 +45,15 @@
                 <input class="checkbox" type="checkbox" id="theList" name="theList" value="add"><span>Please add me to the mailing list!</span>
             </label>
             <!-- HTML format -->
-            <label class="inline" class="z6cols">Choose email format: <span class="err" id="type-error">Please select one</span>
-            <label for="html-format" class="inline">
-                <input type="radio" class="inline" id="html-format" name="email-type" value="Waffel-Cone">
+            <label class="inline z6cols">Choose email format: <span class="err" id="type-error">Please select one</span>
+            </label>
+            <label for="email-type" class="inline">
+                <input type="radio" class="inline" id="email-type" name="email-type" value="html-format">
                 HTML
             </label>
             <label for="text-format" class="inline">
                 <input type="radio" class="inline" id="text-format" name="email-type" value="text-format">
                 Text
-            </label>
             </label>
         <!-- Submit button -->
             <button type="submit" id="submit-button">Submit</button>

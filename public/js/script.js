@@ -9,6 +9,18 @@ function validate(){
         isValid=false;
     }
     //email and err-email
+    let email = document.getElementById("email").value.trim();
+    if(!email || !email.includes("@")){
+        document.getElementById("err-email").style.display = "inline-block";
+        isValid=false;
+    }
     //html-format and type-err
+    let type = document.getElementsByName("email-type").value;
+    if(!type){
+        document.getElementById("type-error").style.display = "inline-block";
+        isValid=false;
+    }
+
+    //validate link
     return isValid;
 }

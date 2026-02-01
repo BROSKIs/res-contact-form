@@ -9,6 +9,9 @@ form{
     margin: 1rem auto;
     padding: 1rem;
 }
+form >h1{
+    text-align: center;
+}
 fieldset input, select, textarea {
     display: block;
     width: 100%;
