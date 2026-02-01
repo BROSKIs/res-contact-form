@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <form id="form-contact" action="#" type="get">
+        <h1>Contact Form</h1>
+        <fieldset>
+            <!-- Name -->
+            <label for="fname" class="Zcols">First Name: <span class="err" id="err-fname">First Name is Required</span>
+            <input type="text" id="fname" name="fname"></label>
+            <label for="lname" class="Zcols">Last Name: 
+            <input type="text" id="lname" name="lname"></label>
+            <!-- JOB -->
+            <label for="job" class="Zcols">Job Title: 
+            <input type="text" id="job" name="job"></label>
+            <label for="company" class="Zcols">Company: 
+            <input type="text" id="company" name="company"></label>
+            <!-- Contact -->
+            <label for="link" class="Zcols">LinkedIn URL: 
+            <input type="text" id="link" name="link"></label>
+            <label for="email" class="Zcols">Email Address: <span class="err" id="err-email">Email is Required</span>
+            <input type="text" id="email" name="email"></label>
+            <!-- How we met -->
+            <label class="z3cols">How did we meet?
+            <select name="meet" id="meet">
+                <option value="none">-- Please Select --</option>
+                <option value="in-person">In-person</option>
+                <option value="online">Online</option>
+                <option value="other">Other</option>
+            </select></label>
+            <label for="other" class="z3cols" >Other (please specify): 
+            <input type="text" id="other" name="other"></label>
+            <!-- Comment box -->
+            <label for="Message" class="z6cols">Message:
+                <textarea rows="5" id="Message" name="Message"></textarea></label>
+        </fieldset>
+        <!-- Mailing list -->
+            <label for="theList" class="z6cols">
+                <input class="checkbox" type="checkbox" id="theList" name="theList" value="add"><span>Please add me to the mailing list!</span>
+            </label>
+            <!-- HTML format -->
+            <label class="inline" class="z6cols">Choose email format: <span class="err" id="type-error">Please select one</span>
+            <label for="html-format" class="inline">
+                <input type="radio" class="inline" id="html-format" name="email-type" value="Waffel-Cone">
+                HTML
+            </label>
+            <label for="text-format" class="inline">
+                <input type="radio" class="inline" id="text-format" name="email-type" value="text-format">
+                Text
+            </label>
+            </label>
+        <!-- Submit button -->
+            <button type="submit" id="submit-button">Submit</button>
+    </form>
+</body>
+</html>
