@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <script src="js/script.js" defer></script>
-    <title>Document</title>
+    <title>Pavlo Tkach - Contact Form</title>
 </head>
 <body>
     <form id="form-contact" action="#">
@@ -14,7 +14,7 @@
             <!-- Name -->
             <label for="fname" class="Zcols">First Name: <span class="err" id="err-fname">First Name is Required</span>
             <input type="text" id="fname" name="fname"></label>
-            <label for="lname" class="Zcols">Last Name: 
+            <label for="lname" class="Zcols">Last Name: <span class="err" id="err-lname">Last Name is Required</span>
             <input type="text" id="lname" name="lname"></label>
             <!-- JOB -->
             <label for="job" class="Zcols">Job Title: 
@@ -22,19 +22,19 @@
             <label for="company" class="Zcols">Company: 
             <input type="text" id="company" name="company"></label>
             <!-- Contact -->
-            <label for="link" class="Zcols">LinkedIn URL: 
+            <label for="link" class="Zcols">LinkedIn URL: <span class="err" id="link-error">Must contain "https://linkedin.com/in/"</span>
             <input type="text" id="link" name="link"></label>
-            <label for="email" class="Zcols">Email Address: <span class="err" id="err-email">Email is Required</span>
+            <label for="email" class="Zcols">Email Address: <span class="err" id="err-email">Email is Invalid</span>
             <input type="text" id="email" name="email"></label>
             <!-- How we met -->
-            <label class="z3cols">How did we meet?
+            <label id="meetBox" class="z6cols">How did we meet? <span class="err" id="err-meet">Please specify</span>
             <select name="meet" id="meet">
                 <option value="none">-- Please Select --</option>
                 <option value="in-person">In-person</option>
                 <option value="online">Online</option>
                 <option value="other">Other</option>
             </select></label>
-            <label for="other" class="z3cols" >Other (please specify): 
+            <label id="otherL" class="z3cols" >Other (please specify): <span class="err" id="err-other">Please specify how we meet</span>
             <input type="text" id="other" name="other"></label>
             <!-- Comment box -->
             <label for="Message" class="z6cols">Message:
@@ -42,19 +42,21 @@
         </fieldset>
         <!-- Mailing list -->
             <label for="theList" class="z6cols">
-                <input class="checkbox" type="checkbox" id="theList" name="theList" value="add"><span>Please add me to the mailing list!</span>
+                <input class="checkbox" type="checkbox" id="theList" name="theList" value="add"><span>Please add me to the mailing list!</span><span class="err" id="list-error"> Email is required</span>
             </label>
             <!-- HTML format -->
-            <label class="inline z6cols">Choose email format: <span class="err" id="type-error">Please select one</span>
-            </label>
-            <label for="email-type" class="inline">
-                <input type="radio" class="inline" id="email-type" name="email-type" value="html-format">
-                HTML
-            </label>
-            <label for="text-format" class="inline">
-                <input type="radio" class="inline" id="text-format" name="email-type" value="text-format">
-                Text
-            </label>
+            <div id="emailTypeBox">
+                <label class="inline z6cols">Choose email format: <span class="err" id="type-error">Please select one</span>
+                </label>
+                <label for="email-type" class="inline">
+                    <input type="radio" class="inline" id="email-type" name="email-type" value="html-format">
+                    HTML
+                </label>
+                <label for="text-format" class="inline">
+                    <input type="radio" class="inline" id="text-format" name="email-type" value="text-format">
+                    Text
+                </label>
+            </div>
         <!-- Submit button -->
             <button type="submit" id="submit-button">Submit</button>
     </form>

@@ -39,6 +39,7 @@ button{
     display: block;
     background-color: #10B981;
     padding: .5rem;
+    margin-top: 1rem;
     border: none;
     border-radius: .6rem;
 }
@@ -52,6 +53,9 @@ button{
 .z6cols{
     grid-column: span 6;
 }
+#otherL, #emailTypeBox{
+    display: none;
+}
 /* Style for radio buttons */
 .inline {
     display: inline-block;
@@ -60,4 +64,13 @@ button{
 .err{
     display: none;
     color:darkred;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 18px; 
+    }
+    fieldset {
+        display: block;
+    }
 }
