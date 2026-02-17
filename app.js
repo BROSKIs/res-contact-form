@@ -31,7 +31,9 @@ app.post("/submit", (req, res) =>{
         email: req.body.email ? req.body.email: "none",
         meet: req.body.meet,//req
         other: req.body.other ? req.body.other: "none",
-        Message: req.body.Message ? req.body.Message: "none"
+        Message: req.body.Message ? req.body.Message: "none",
+        mailingList: req.body.theList ? req.body.theList: "none",
+        mailingListType: req.body.emailType ? req.body.emailType: "none"
     };
 
     friends.push(contact);
