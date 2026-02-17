@@ -66,6 +66,10 @@ button{
     color:darkred;
 }
 
+a{
+    text-decoration: none;
+}
+
 @media screen and (max-width: 600px) {
     body{
         font-size: 18px; 
