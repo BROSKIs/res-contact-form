@@ -1,9 +1,11 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: #F3F3F3;
 }
 
 /* FORM styles */
-form{
+#boxs, form{
     background-color: white;
     width: 70%;
     margin: 1rem auto;
@@ -70,11 +72,49 @@ a{
     text-decoration: none;
 }
 
+/* Nav bar styles */
+.main-nav {
+  width: 70%;
+  height: 60px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+
+
 @media screen and (max-width: 600px) {
     body{
-        font-size: 18px; 
+        font-size: 18px;
     }
     fieldset {
         display: block;
     }
+    /* Nav bar styles */
+    .main-nav {
+        width: 90%;
+        padding: 10px 20px;
+        border-radius: 15px;
+   }
+
+   .nav-links {
+        gap: 10px;
+        font-size: 0.9rem;
+   }
 }

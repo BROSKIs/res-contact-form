@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Thank you for your submision</title>
+</head>
+<body>
+    
+    <div id="boxs">
+        <h1>Thank you for your submission</h1>
+        <!-- 
+        job: req.body.job ? req.body.job: "none",
+        company: req.body.company ? req.body.company: "none",
+        link: req.body.link ? req.body.link: "none",
+        email: req.body.email ? req.body.email: "none",
+        meet: req.body.meet,//req
+        other: req.body.other ? req.body.other: "none",
+        Message: req.body.Message ? req.body.Message: "none",
+        mailingList: req.body.theList ? req.body.theList: "none",
+        mailingListType: req.body.emailType ? req.body.emailType: "none" -->
+        <!-- req -->
+        <h3>Name: <%= contact.fname %> <%= contact.lname %></h3> 
+        <!-- Job -->
+        <% if(contact.job!="null"){%>
+            <h3>Job: <%= contact.job %></h3>
+        <% } %>
+        <!-- Company -->
+        <% if(contact.company!="null"){%>
+            <h3>Company: <%= contact.company %></h3>
+        <% } %>
+        <!-- LinkedIn -->
+        <% if(contact.link!="null"){%>
+            <h3>LinkedIn: <%= contact.link %></h3>
+        <% } %>
+        <!-- Email -->
+        <% if(contact.email!="null"){%>
+            <h3>Email: <%= contact.email %></h3>
+        <% } %>
+        <!-- req -->
+        <h3>How we meet: <%= contact.meet %></h3>
+        <% if(contact.meet=="other"){%>
+            <h3>How we meet(other): <%= contact.other %></h3>
+        <% } %>
+        <h3>Message: <%= contact.Message %> <br></h3>
+
+        <% if(contact.mailingList!="no"){%>
+            <p>Mailing List: <%= contact.mailingList %></p>
+            <p>mailingListType:  <%= contact.mailingListType %></p> 
+        <% } %>
+        
+        <p>Time: <%= contact.timestamp.toLocaleString() %></p>
+        <a href="/"><button>Go Back</button></a>
+    </div>
+</body>
+</html>

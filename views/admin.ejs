@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+</head>
+<body>
+    <table id="friend-table">
+    <thead>
+        <tr>
+
+     <!-- name= email= flavor= cone= Toppings comments=  -->
+      <!-- 
+        const contact = {
+        fname: req.body.fname,//req
+        lname: req.body.lname,//req
+        job: req.body.job ? req.body.job: "null",
+        company: req.body.company ? req.body.company: "null",
+        link: req.body.link ? req.body.link: "null",
+        email: req.body.email ? req.body.email: "null",
+        meet: req.body.meet,//req
+        other: req.body.other ? req.body.other: "null",
+        Message: req.body.Message ? req.body.Message: "null",
+        mailingList: req.body.theList ? req.body.theList: "no",
+        mailingListType: req.body.emailType ? req.body.emailType: "no",
+        timestamp: new Date()
+    }; -->
+        <!-- req -->
+            <th>Name</th>
+            <th>Job</th>
+            <th>Company</th>
+            <th>LinkedIn</th>
+            <th>Email</th>
+            <th>How we meet</th>
+            <th>if "Other"</th>
+            <th>Message</th>
+            <th>Mailing List</th>
+            <th>Mailing Type</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <% friends.forEach(friend => { %>
+        <tr>
+            <td><%= friend.fname %> <%= friend.lname %></td>
+            <td><%= friend.job %></td>
+            <td><%= friend.company %></td>
+            <td><%= friend.link %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.meet %></td>
+            <td><%= friend.other %></td>
+            <td><%= friend.Message %></td>
+            <td><%= friend.mailingList %></td>
+            <td><%= friend.mailingListType %></td>
+            <td><%= friend.timestamp.toLocaleString() %></td>
+        </tr>
+    <% }) %>
+    </table>
+    <script defer>
+        let table = new DataTable("#friend-table");
+    </script>
+</body>
+</html>

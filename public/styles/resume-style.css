@@ -1,0 +1,107 @@
+:root {
+    --primary: rgba(236, 236, 256);
+    --secondary: black;
+}
+
+/* Body */
+body {
+    font-size: 12px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: .7rem;
+    background-color: var(--primary);
+}
+
+
+img{
+    max-width: 4rem;
+    margin-top: .2rem;
+    border-radius: 50%;
+    float: right;
+}
+
+h1 {
+    margin: .1rem auto;
+}
+
+h2 {
+    font-size: 1.005rem;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+a:focus {
+    background-color: aquamarine;
+}
+/* flex-box */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+header {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+div {
+    border: 1px solid black;
+    padding: 1rem;
+    flex: 1 0 40%;
+}
+
+li {
+    font-style: italic;
+}
+/* Navbar styles */
+.main-nav {
+  width: 70%;
+  height: 60px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  /* CSS styles to apply when the screen width is 600px or less */
+  body {
+    display: block;
+    line-height: 1rem;
+  }
+  div {
+    border: none;
+    padding: 0;
+  }
+  /* navbar */
+   .main-nav {
+        width: 90%;
+        padding: 10px 20px;
+        border-radius: 15px;
+   }
+
+   .nav-links {
+        gap: 10px;
+        font-size: 0.9rem;
+   }
+}
