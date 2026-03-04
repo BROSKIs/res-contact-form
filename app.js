@@ -1,5 +1,8 @@
 import express from "express";
+import mysql2 from "mysql2";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 //create app
 const app = express();
@@ -16,6 +19,16 @@ app.use(express.urlencoded({ extended: true}));
 
 app.use(express.static("public"));
 
+//DATABASE 
+//create a pool bucket of database connections
+const pool = mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
+
 app.get("/", (req, res)=>{
     res.render('resume');
 });
@@ -25,26 +38,34 @@ app.get("/contact", (req, res) =>{
     res.render("home");
 });
 
-app.get("/admin", (req,res)=>{
-    res.render("admin", { friends });
+app.get("/admin", async (req,res)=>{
+
+    let sql = "SELECT * FROM contacts ORDER BY timestamp DESC";
+    const friends = await pool.query(sql);
+
+    res.render("admin", { friends:friends[0] });
 });
 
-app.post("/submit", (req, res) =>{
+app.post("/submit", async (req, res) =>{
     // fname= lname=jhbn& job=& company=& link=& email=& meet=in-person&o ther=& Message=
-    const contact = {
-        fname: req.body.fname,//req
-        lname: req.body.lname,//req
-        job: req.body.job ? req.body.job: "null",
-        company: req.body.company ? req.body.company: "null",
-        link: req.body.link ? req.body.link: "null",
-        email: req.body.email ? req.body.email: "null",
-        meet: req.body.meet,//req
-        other: req.body.other ? req.body.other: "null",
-        Message: req.body.Message ? req.body.Message: "null",
-        mailingList: req.body.theList ? req.body.theList: "no",
-        mailingListType: req.body.emailType ? req.body.emailType: "no",
-        timestamp: new Date()
-    };
+    const contact = req.body;
+    const contactS = [
+        req.body.fname,
+        req.body.lname,
+        req.body.job || "none",
+        req.body.company || "none",
+        req.body.link || "none",
+        req.body.email || "none",
+        req.body.meet || "none",
+        req.body.other || "none",
+        req.body.Message || "none",
+        req.body.theList || "none",
+        req.body.emailType || "none"
+    ];
+
+    const sql = `INSERT INTO contacts (fname, lname, job, company, link, email, meet, other, message, mailingList, mailingListType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    const result = await pool.execute(sql, contactS);
 
     friends.push(contact);
 

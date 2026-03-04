@@ -44,13 +44,6 @@
             <h3>How we meet(other): <%= contact.other %></h3>
         <% } %>
         <h3>Message: <%= contact.Message %> <br></h3>
-
-        <% if(contact.mailingList!="no"){%>
-            <p>Mailing List: <%= contact.mailingList %></p>
-            <p>mailingListType:  <%= contact.mailingListType %></p> 
-        <% } %>
-        
-        <p>Time: <%= contact.timestamp.toLocaleString() %></p>
         <a href="/"><button>Go Back</button></a>
     </div>
 </body>
