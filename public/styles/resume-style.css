@@ -3,10 +3,14 @@
     --secondary: black;
 }
 
-/* Body */
-body {
-    font-size: 12px;
+
+main {
+    display: block;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
     font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
     line-height: .7rem;
     background-color: var(--primary);
 }
@@ -39,7 +43,7 @@ a:focus {
     background-color: aquamarine;
 }
 /* flex-box */
-body {
+main {
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
@@ -52,10 +56,6 @@ div {
     border: 1px solid black;
     padding: 1rem;
     flex: 1 0 40%;
-}
-
-li {
-    font-style: italic;
 }
 /* Navbar styles */
 .main-nav {
@@ -89,6 +89,10 @@ li {
     display: block;
     line-height: 1rem;
   }
+  main {
+    display: block;
+    width: auto;
+  }
   div {
     border: none;
     padding: 0;
@@ -102,6 +106,5 @@ li {
 
    .nav-links {
         gap: 10px;
-        font-size: 0.9rem;
    }
 }

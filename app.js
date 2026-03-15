@@ -73,6 +73,10 @@ app.post("/submit", async (req, res) =>{
     res.render("conf", {contact});
 });
 
+app.get("/portfolio", (req, res)=>{
+    res.render("portfolio");
+});
+
 app.listen(PORT, () => {
     console.log(`app running at http://localhost:${PORT}`);
 });

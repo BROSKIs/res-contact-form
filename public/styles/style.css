@@ -82,6 +82,8 @@ a{
   justify-content: center;
   align-items: center;
   padding: 15px 30px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 
@@ -96,6 +98,27 @@ a{
 .nav-links li a {
   text-decoration: none;
   color: black;
+}
+
+/* Portfolio Styles */
+.port-main {
+    display: block;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.part-port {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    border: 2px solid black;
+    margin-top: 1rem;
+}
+
+.part-port img {
+    display: block;
+    max-width: 50%;
 }
 
 
