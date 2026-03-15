@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Login</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <form action="/admin" method="post">
+        <% if(!(typeof message === "undefined")){ %>
+            <h4><%= message %></h4>
+        <% } %>
+        <label for="user">User:
+            <input type="text" id="user" name="user">
+        </label>
+        <label for="pass">Password:
+            <input type="password" id="pass" name="pass">
+        </label>
+        <button>Login</button>
+    </form>
+</body>
+</html>

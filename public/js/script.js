@@ -26,8 +26,8 @@ function validate(){
         isValid =false;
     }
     //html-format and type-err
-    const textType = document.getElementById("text-format");
-    const emailType = document.getElementById("email-type");
+    const textType = document.getElementById("textFormat");
+    const emailType = document.getElementById("emailType");
     if(mailingList.checked && !(textType.checked || emailType.checked)){
         document.getElementById("type-error").style.display = "inline-block";
         isValid=false;

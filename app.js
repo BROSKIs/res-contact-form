@@ -1,6 +1,7 @@
 import express from "express";
 import mysql2 from "mysql2";
 import dotenv from "dotenv";
+import {validateForm} from "./validation.js"
 
 dotenv.config();
 
@@ -38,17 +39,39 @@ app.get("/contact", (req, res) =>{
     res.render("home");
 });
 
-app.get("/admin", async (req,res)=>{
+app.get("/admin", (req,res)=>{
+    res.render("admin-login");
+});
 
-    let sql = "SELECT * FROM contacts ORDER BY timestamp DESC";
-    const friends = await pool.query(sql);
+app.post("/admin", async (req,res)=>{
+    const login = req.body;
 
-    res.render("admin", { friends:friends[0] });
+    if(!(typeof login.pass === "undefined" && typeof login.user === "undefined")){
+        if(!(login.user === process.env.ADMIN_USER && login.pass === process.env.ADMIN_PASS)){
+            const message = "user or pass is incorect";
+            res.render("admin-login", { message });
+            return;
+        }
+        let sql = "SELECT * FROM contacts ORDER BY timestamp DESC";
+        const friends = await pool.query(sql);
+
+        res.render("admin", { friends:friends[0] });
+        return;
+    }
+
+    res.render("admin-login")
 });
 
 app.post("/submit", async (req, res) =>{
     // fname= lname=jhbn& job=& company=& link=& email=& meet=in-person&o ther=& Message=
     const contact = req.body;
+
+    const valid = validateForm(contact);
+    if(!valid.isValid){
+        console.log(valid);
+        res.render("home", {errors: valid.errors })
+        return;
+    }
     const contactS = [
         req.body.fname,
         req.body.lname,
